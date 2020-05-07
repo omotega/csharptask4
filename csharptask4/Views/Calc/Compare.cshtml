@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "SQUAREROOT CALCULATOR";
+}
+
+<div class="text-center">
+    <h1 class="display-4">The squareroot comparison calculator</h1>
+</div>  
+
+@{
+  if (ViewBag.Result != null)
+  {
+    <div>
+        <p>@ViewBag.Result</p>
+    </div>
+  }
+}
+
+<div>
+
+    <form Asp-controller="Calc" asp-action="Compare" method="POST">
+        <input type="number" placeholder="First Number" name="firstnumber"/>
+        <input type="number" placeholder="Second Number" name="secondnumber"/>
+        <button types="submit">submit</button>
+
+    </form>
+</div>
