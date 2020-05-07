@@ -21,46 +21,46 @@ namespace csharptask4.Controllers
         }
         private static string square(String firstnum, String secondnum)
         {
-            int firstnumber;
-            int secondnumber;
-            bool isfirstnumbertrue = int.TryParse(firstnum, out firstnumber);
-            bool issecondnumbertrue  = int.TryParse(secondnum, out secondnumber);
-            string output = String.Empty;
+            int numberoneinput;
+            int numbertwoinput;
+            bool isnumberoneinputtrue = int.TryParse(firstnum, out numberoneinput);
+            bool isnumbertwoinputtrue  = int.TryParse(secondnum, out numbertwoinput);
+            string result = String.Empty;
 
             if (firstnum == "" || secondnum == "")
             {
-                output = "kindly input values";
+                result = "kindly input values";
             }
-            else if (isfirstnumbertrue && issecondnumbertrue)
+            else if (isnumberoneinputtrue && isnumbertwoinputtrue)
             {
-                if (firstnumber < 0 || secondnumber < 0)
+                if (numberoneinput < 0 || numbertwoinput < 0)
                 {
-                    output = "Input only positive numbers";
+                    result = "Input only positive numbers";
                 }
                 else
                 {
-                    double firstnumbersqr = Math.Sqrt(firstnumber);
-                    double secondnumbersqr = Math.Sqrt(secondnumber);
+                    double numberoneinputsqr = Math.Sqrt(numberoneinput);
+                    double numbertwoinputsqr = Math.Sqrt(numbertwoinput);
 
-                    if (firstnumbersqr > secondnumbersqr)
+                    if (numberoneinputsqr > numbertwoinputsqr)
                     {
-                        output = "The number" + firstnumber + "with squareroot" + firstnumbersqr + " has a higher squareroot than the numbe r"+ secondnumber + " with " + secondnumbersqr;
+                        result = "The number" + numberoneinput + "with squareroot" + numberoneinputsqr + " has a higher squareroot than the number"+ numbertwoinput + " with " + numbertwoinputsqr;
                     }
-                    else if(secondnumber > firstnumber)
+                    else if(numbertwoinput > numberoneinput)
                     {
-                        output = "The number" + secondnumber + " with squareroot " + secondnumbersqr + " has a higher squareroot than the number " + firstnumber +" with " + firstnumbersqr;
+                        result = "The number" + numbertwoinput + " with squareroot " + numbertwoinputsqr + " has a higher squareroot than the number " + numberoneinput +" with " + numberoneinputsqr;
                     }
-                    else if (firstnumber == secondnumber)
+                    else if (numberoneinput == numbertwoinput)
                     {
-                        output = "The number has the same value ,input another value";
+                        result = "The number has the same value ,input another value";
                     }
                     else 
                     {
-                        output ="input only a number";
+                        result ="input only a number";
                     }
                 }
             }
-            return output;
+            return result;
         }
     }
 }
